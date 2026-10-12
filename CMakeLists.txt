@@ -5,15 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(bookmgmt
-    src/Money.cpp
-    src/Resource.cpp
-    src/Book.cpp
-    src/ElectronicResource.cpp
-    src/Budget.cpp
-    src/Catalog.cpp
-    src/Acquisition.cpp
+file(GLOB BOOKMGMT_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
+
+add_library(bookmgmt ${BOOKMGMT_SOURCES})
 target_include_directories(bookmgmt PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if(MSVC)

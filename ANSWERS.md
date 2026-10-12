@@ -171,7 +171,7 @@ Tests verify normal money operations and confirm that adding, subtracting, or co
 
 **Implementation:**
 
-Replaced the custom `CHECK` and `CHECK_THROWS` test macros in `tests/test_main.cpp` with standard C++ `assert` statements. Added a `throwsAs` helper to check whether an expression throws the expected exception type.
+Replaced the custom `CHECK` and `CHECK_THROWS` test macros in `tests/MT26159_test_main.cpp` with standard C++ `assert` statements. Added a `throwsAs` helper to check whether an expression throws the expected exception type.
 
 **Testing:**
 

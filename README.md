@@ -18,7 +18,7 @@ Without CMake:
 
 ```sh
 g++ -std=c++17 -Wall -Wextra -Iinclude src/*.cpp examples/demo.cpp -o demo
-g++ -std=c++17 -Wall -Wextra -Iinclude src/*.cpp tests/test_main.cpp -o tests
+g++ -std=c++17 -Wall -Wextra -Iinclude src/*.cpp tests/MT26159_test_main.cpp -o tests
 ```
 
 ## Layout
@@ -29,14 +29,14 @@ include/bookmgmt/
   Money.h               currency amounts (stored as whole paise/cents)
   Resource.h            abstract base class + ResourceCategory
   Book.h                print book
-  ElectronicResource.h  online resource licensed per user seat
+  MT26159_ElectronicResource.h  online resource licensed per user seat
   Budget.h              overall budget + per-category Quota
   Catalog.h             owns resources, tracks holdings, searching
   Acquisition.h         purchase requests, orders, history, reports
   Exceptions.h          exception classes
 src/                    implementations
 examples/demo.cpp       end-to-end example
-tests/test_main.cpp     tests (tiny built-in CHECK macro, no framework)
+tests/MT26159_test_main.cpp     tests (tiny built-in CHECK macro, no framework)
 ```
 
 ## Design
@@ -120,7 +120,7 @@ acq.canPurchase("B001", 3);         // false: unit quota (2 left)
 ## Extension exercises
 
 Difficulty: ★ easy, ★★ moderate, ★★★ challenging. For every exercise, add
-tests to `tests/test_main.cpp` and extend `examples/demo.cpp` to show the new
+tests to `tests/MT26159_test_main.cpp` and extend `examples/demo.cpp` to show the new
 feature. Exercises 1 and 2 should be done first; later exercises may use
 the classes they add.
 
